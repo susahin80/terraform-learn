@@ -27,8 +27,8 @@ module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "19.12.0"
 
-  cluster_name                   = "myapp-eks-cluster"
-  cluster_version                = "1.25"
+  cluster_name                   = "my-cluster"
+  cluster_version                = "1.22"
   cluster_endpoint_public_access = true
 
   # https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest?tab=outputs
@@ -46,7 +46,7 @@ module "eks" {
       max_size     = 2
       desired_size = 2
 
-      instance_types = ["t2.micro"]
+      instance_types = ["t2.small"]
     }
   }
 }
